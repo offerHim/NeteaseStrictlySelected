@@ -1,19 +1,23 @@
 import React from 'react'
-import RouterView from './RouterView'
+
+
+
+import Login from '../view/login/index'
+import Main from '../view/main/index'
 
 export default {
     routes: [{
         path: '/login',
-        components:()=><p>首页</p>
+        component: Login
     },{
         path:'/main',
-        component: (props:any)=>(<>
-            <p>主页面</p>
-            <RouterView routes={props.routes}></RouterView>
-        </>),
+        component:Main,
             children:[{
                 path: '/main/home',
                 component: ()=><p>首页</p>
+            },{
+                path: '/main/special',
+                component: ()=><p>专题</p>
             },{
                 path: '/main/classify',
                 component: ()=><p>分类</p>

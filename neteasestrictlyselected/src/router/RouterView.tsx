@@ -14,27 +14,22 @@ interface PropType{
 }
 
 export default (props: PropType)=>{
-    return <div className="warp">
-        <div className="router">
-            <Switch>
-                {
-                    props.routes.map((item: ItemType, index)=>{
-                        if(item.from === '*'){
-                            return <Redirect key={index} to={item.to} />
-                        }else if(item.from){
-                            return <Redirect key={index} exact from={item.from} to={item.to} />
+    return <Switch>
+            {
+                props.routes.map((item: ItemType, index)=>{
+                    if(item.from === '*'){
+                        return <Redirect key={index} to={item.to} />
+                    }else if(item.from){
+                        return <Redirect key={index} exact from={item.from} to={item.to} />
+                    }
+                    return <Route key={index} path={item.path} render={(props)=>{
+                        if(item.children){
+                            return <item.component {...props} routes={item.children} />
+                        }else{
+                            return <item.component {...props} />
                         }
-                        return <Route key={index} path={item.path} render={(props)=>{
-                            if(item.children){
-                                return <item.component {...props} routes={item.children} />
-                            }else{
-                                return <item.component {...props} />
-                            }
-                        }}></Route>
-                    })
-                }
-            </Switch>
-        </div>
-        <div className="nav"></div>
-    </div>
+                    }}></Route>
+                })
+            }
+    </Switch>
 }
