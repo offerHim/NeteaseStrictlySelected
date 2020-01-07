@@ -2,31 +2,33 @@ import React from 'react'
 
 
 
-import Login from '../view/login/index'
+
 import Main from '../view/main/index'
+import Home from '../view/main/home/index'
+import Special from '../view/main/special/index'
+import Classify from '../view/main/classify/index'
+import Cart from '../view/main/cart/index'
+import My from '../view/main/my/index'
 
 export default {
     routes: [{
-        path: '/login',
-        component: Login
-    },{
         path:'/main',
         component:Main,
             children:[{
                 path: '/main/home',
-                component: ()=><p>首页</p>
+                component: Home
             },{
                 path: '/main/special',
-                component: ()=><p>专题</p>
+                component: Special
             },{
                 path: '/main/classify',
-                component: ()=><p>分类</p>
+                component: Classify
             },{
                 path: '/main/cart',
-                component: ()=><p>购物车</p>
+                component: Cart
             },{
                 path: '/main/my',
-                component: ()=><p>我的</p>
+                component: My
             }]
     },{
         from: '*',
