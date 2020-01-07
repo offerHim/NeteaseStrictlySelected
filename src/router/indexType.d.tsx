@@ -8,4 +8,4 @@ export interface ItemType {
 
 export interface propsType {
     routes: ItemType[]
-}
+} 
