@@ -1,5 +1,5 @@
 import React from 'react'
-import useStore from '../util/useStore'
+import useStore from '../../util/useStore'
 import { useObserver } from 'mobx-react-lite';
 import { useHistory } from 'react-router-dom'
 
