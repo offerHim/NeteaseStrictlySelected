@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/index.css';
-import './assets/index.scss';
 import App from './router/index';
 // 引入StoreContext的Provider
 import StoreContext from './context/StoreContext'

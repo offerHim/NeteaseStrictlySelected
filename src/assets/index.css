@@ -6,6 +6,7 @@ html,body,div,p,span,ul,li,ol,a,img{
 html,body,#root{
 width: 100%;
 height: 100%;
+overflow: hidden;
 font-size: calc(100vw / 750 * 100);
 }
 
