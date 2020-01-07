@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import RouterView from '../../router/RouterView'
-import './index.css'
-
+import styles from './index.module.scss'
 
 const Main: React.FC = (props:any) => {
   
@@ -26,11 +25,11 @@ const Main: React.FC = (props:any) => {
         }
     ]
     
-    return <div className="main_div">
-        <div className="router">
+    return <div className={styles.main_div}>
+        <div className={styles.router}>
             <RouterView routes={props.routes}></RouterView>
         </div>
-        <div className="nav">
+        <div className={styles.nav}>
             {
                 navList.map((item,index)=>{
                 return <NavLink key={index} to={item.path}>{item.title}</NavLink>
