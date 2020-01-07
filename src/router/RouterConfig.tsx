@@ -1,11 +1,14 @@
 import React from 'react'
 import RouterView from './RouterView'
 
+//引入登陆组件
+import Login from '../views/Login'
+
 export default {
     routes: [
         {
             path: '/login',
-            component: () => <p>登陆页面</p>
+            component: () => <Login></Login>
         },
         {
             path: '/main',
