@@ -228,16 +228,42 @@
             width: 100%;
             height: auto;
             background: #fff;
-            padding: .2rem;
             display: flex;
             flex-wrap: wrap;
             .block{
                 flex-shrink: 0;
                 width: 50%;
-                height: 5.3rem;
+                height: 4.5rem;
+                border: 0.01rem solid #f0f0f0;
                 img{
                     width: 100%;
-                    height: 85%;
+                    height: 72%;
+                }
+                .name{
+                    width: 90%;
+                    text-align: center;
+                    font-size: .28rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                .price{
+                    padding-top: .1rem;
+                    color: red;
+                    text-align: center;
+                }
+            }
+            .boton{
+                flex-shrink: 0;
+                width: 50%;
+                height: 4.5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: .8rem;
+                    height: .8rem;
                 }
             }
         }

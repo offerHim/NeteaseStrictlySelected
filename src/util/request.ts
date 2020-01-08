@@ -7,7 +7,7 @@ const instance = axios.create({
     // headers: {'X-Custom-Header': 'foobar'}
 });
 
-// 请求拦截器
+// 请求拦截器 
 instance.interceptors.request.use(function(config) {
     // Do something before request is sent
     return config;

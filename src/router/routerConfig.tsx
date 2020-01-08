@@ -5,6 +5,7 @@ import Special from '../view/main/special/index'
 import Classify from '../view/main/classify/index'
 import Cart from '../view/main/cart/index'
 import My from '../view/main/my/index'
+import BrandDetail from '../view/main/BrandDetail/index'
 
 export default {
     routes: [{
@@ -29,9 +30,12 @@ export default {
                 path: '/main/my',
                 component: My
             },{
-                from:'*',
+                from:'/main',
                 to:'/main/home'
             }]
+    },{
+        path: '/BrandDetail',
+        component: BrandDetail
     },{
         from: '*',
         to:'/login'

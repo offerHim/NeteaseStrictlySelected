@@ -7,3 +7,21 @@ export function home() {
         method: 'get'
     })
 }
+
+//制造商详情
+export function BrandDetail(id:string){
+    return request({
+        url: '/brand/detail',
+        method: 'get',
+        params:{id}
+    })
+}
+
+//制造商详情界面商品
+export function goodsRelated(id:string){
+    return request({
+        url: '/goods/related',
+        method: 'get',
+        params:{id}
+    })
+}
