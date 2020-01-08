@@ -2,7 +2,6 @@
 :local{
     .home_div{
         width: 100%;
-        height: 100%;
         background: #f0f0f0;
     }
     .banner{
@@ -25,9 +24,9 @@
             display: flex;
             flex-direction: column;
             img{
-                width: .65rem;
-                height: .65rem;
-                margin: auto;
+                width: .55rem;
+                height: .55rem;
+                margin: .17rem auto;
             }
         }
     }
@@ -90,33 +89,155 @@
         }
         .brand_box{
             width: 100%;
-            height: 4.84rem;
+            height: 8rem;
             background: #fff;
             display: flex;
             flex-wrap: wrap;
-            opacity: 1;
-            transition: all 1s;
             .brand_block{
                 width: 50%;
                 height: 50%;
                 flex-shrink: 0;
-                position: relative;
                 img{
                     width: 100%;
-                    height: 100%;
+                    height: 3rem;
                 }
-                .barndName{
-                    position: absolute;
-                    top: .2rem;
-                    left: .2rem;
+                p{
+                    line-height: .5rem;
+                    text-align: center;
+                }
+                .name{
                     font-size: .3rem;
                 }
-                .barndPrice{
-                    position: absolute;
-                    top: .65rem;
-                    left: .2rem;
-                    font-size: .24rem;
-                    color: #a9a9a9;
+                .price{
+                    color: #8b0000;
+                    font-size: .3rem;
+                }
+            }
+        }
+    }
+    .hotGoodsList{
+        margin-top: .2rem;
+        background: #fff;
+        .h3{
+            width: 100%;
+            text-align: center;
+            line-height: 1rem;
+            font-size: .3rem;
+            font-weight: 700;
+        }
+        .brand_box{
+            width: 100%;
+            padding: 0 .2rem;
+            min-height: 200px;
+            .brand_block{
+                height: 3rem;
+                padding: .1rem 0;
+                display: flex;
+                border-top: .04rem solid #f0f0f0;
+                img{
+                    width: auto;
+                    height: 100%;
+                }
+                .text{
+                    flex: 1 1;
+                    padding: .5rem 0;
+                    p{
+                        line-height: .6rem;
+                    }
+                    .name{
+                        font-size: .32rem;
+                    }
+                    .info{
+                        color: #a9a9a9;
+                        font-size: .28rem;
+                    }
+                    .price{
+                        color: #8b0000;
+                        font-size: .3rem;
+                    }
+                }
+            }
+        }
+    }
+    .topicList{
+        margin-top: .2rem;
+        background: #fff;
+        padding-bottom: .2rem;
+        .h3{
+            width: 100%;
+            text-align: center;
+            line-height: 1rem;
+            font-size: .3rem;
+            font-weight: 700;
+        }
+        .brand_box{
+            width: 100%;
+            padding: 0 .2rem;
+            height: auto;
+            box-sizing: border-box;
+            overflow-x: scroll;
+            transform: translate3d(0px, 0px, 0px);
+
+            ul{
+                padding: 0px;
+                height: 277px;
+                list-style: none;
+                cursor: inherit;
+                box-sizing: border-box;
+                display: flex;
+                li{
+                    flex-shrink: 0;
+                    width: 7rem;
+                    height: 100%;
+                    margin: 0 .1rem;
+                    img{
+                        width: 100%;
+                        height: 4rem;
+                    }
+                    .price{
+                        line-height: .4rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        font-size: .32rem;
+                        span{
+                            color: #8b0000;
+                        }
+                    }
+                    .subtitle{
+                        line-height: .4rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        font-size: .24rem;
+                        color: grey;
+                        margin-top: .1rem;
+                    }
+                }
+            }
+        }
+    }
+    .categoryList{
+        width: 100%;
+        height: auto;
+        .h3{
+            text-align: center;
+            line-height: 1rem;
+        }
+        .cateGoryGoodsWrap{
+            width: 100%;
+            height: auto;
+            background: #fff;
+            padding: .2rem;
+            display: flex;
+            flex-wrap: wrap;
+            .block{
+                flex-shrink: 0;
+                width: 50%;
+                height: 5.3rem;
+                img{
+                    width: 100%;
+                    height: 85%;
                 }
             }
         }
