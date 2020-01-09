@@ -1,49 +1,47 @@
 import { observable, action } from 'mobx'
 
-import { home , BrandDetail , goodsRelated} from "../api/home"
+import { home , BrandDetail , GoodsDetail} from "../api/home"
+import { HomeType , GooodsType } from '../util/type'
 
-interface ItemType {
-    name:string,
-}
 class HomeStore {
     //首页数据
     @observable
-    channel: any[]=[]
-
-    @observable
-    brandList: any[]=[]
-
-    @observable
-    newGoodsList: any[]=[]
-
-    @observable
-    hotGoodsList: any[]=[]
-
-    @observable
-    topicList: any[]=[]
-
-    @observable
-    categoryList: any[]=[]
+    data: HomeType = {
+        banner: [],
+        channel: [],
+        newGoodsList: [],
+        hotGoodsList: [],
+        brandList: [],
+        topicList: [],
+        categoryList: []
+    }
 
     //制造商详情数据
     @observable
     brandDetails:any
-
+    //制造商详情id接口
     @observable
     brandId:any
+
+    //商品详情id
     @observable
-    id:any
+    goodsId:any
+    //商品详情数据
+    @observable
+    goodsDate:GooodsType={
+        attribute:[],
+        gallery:[],
+        issue:[],
+        productList:[]
+    }
+    @observable
+    info:any
 
     //首页数据
     @action
     async home(){
         let res = await home()
-        this.channel = res.data.channel
-        this.brandList = res.data.brandList
-        this.newGoodsList = res.data.newGoodsList
-        this.hotGoodsList = res.data.hotGoodsList
-        this.topicList = res.data.topicList
-        this.categoryList = res.data.categoryList
+        this.data = res.data
     }
 
     //制造商详情
@@ -51,16 +49,25 @@ class HomeStore {
     async BrandDetail(){
         this.brandId = sessionStorage.getItem('brandId')
         let res = await BrandDetail(this.brandId)
-        sessionStorage.setItem('id',res.data.brand.id)
         this.brandDetails = res.data.brand
+    }
 
-    }
+    //商品接口详情
     @action
-    async goodsRelated(){
-        this.id = sessionStorage.getItem('id')
-        let res = await goodsRelated(this.id)
-        console.log(res)
+    async GoodsDetail(){
+        this.goodsId = sessionStorage.getItem('goodsId')
+        console.log(this.goodsId)
+        let res = await GoodsDetail(this.goodsId)
+        this.goodsDate = res.data
+        this.info = res.data.info
     }
+    // @action
+    // async goodsRelated(){
+    //     this.id = sessionStorage.getItem('id')
+    //     console.log(this.id )
+    //     let res = await goodsRelated(this.brandId)
+    //     console.log(res)
+    // }
 }
 
 export default HomeStore

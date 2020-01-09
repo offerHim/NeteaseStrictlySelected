@@ -17,11 +17,20 @@ export function BrandDetail(id:string){
     })
 }
 
-//制造商详情界面商品
-export function goodsRelated(id:string){
+//商品详情
+export function GoodsDetail(id:string){
     return request({
-        url: '/goods/related',
+        url: '/goods/detail',
         method: 'get',
         params:{id}
     })
 }
+
+//制造商详情界面商品
+// export function goodsRelated(id:string){
+//     return request({
+//         url: '/goods/related',
+//         method: 'get',
+//         params:{id}
+//     })
+// }

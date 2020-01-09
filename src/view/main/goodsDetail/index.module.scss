@@ -1,0 +1,26 @@
+:local{
+    .brand_box{
+        width: 100%;
+        height: 100%;
+    }
+    .header{
+        width: 100%;
+        height: 1rem;
+        background: #fff;
+        position: fixed;
+        font-size: .42rem;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 0.04rem 0.08rem 0 rgba(0,0,0,.12), 0 0 6px 0 rgba(0,0,0,.04);
+        div{
+            padding: 0 .1rem;
+        }
+        .title{
+            font-size: .30rem;
+            color: #000;
+            font-weight: 500;
+        }
+    }
+}
