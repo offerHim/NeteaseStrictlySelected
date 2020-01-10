@@ -7,7 +7,8 @@ class LoginStore {
     @observable
     user: string = "15323807318"
 
-    @observable pwd: string = "123456"
+    @observable 
+    pwd: string = "123456"
 
     @observable
     userInfo: Object = {}

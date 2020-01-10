@@ -1,0 +1,123 @@
+.classify {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.searchBox {
+    width: 100%;
+    height: 1rem;
+    width: 100%;
+    height: .8rem;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, .12), 0 0 6px 0 rgba(0, 0, 0, .04);
+    .searchInput {
+        width: 90%;
+        height: 70%;
+        background: #ededed;
+        border-radius: .1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: .28rem;
+        color: #666;
+    }
+}
+
+.content {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.left {
+    width: 25%;
+    height: 100%;
+    background: white;
+    border-right: 1px solid #f2f2f6;
+    box-sizing: border-box;
+    .leftItem {
+        width: 100%;
+        height: .80rem;
+        line-height: .90rem;
+        text-align: center;
+        font-size: .28rem;
+        box-sizing: border-box;
+    }
+}
+
+.right {
+    width: 75%;
+    height: 100%;
+    overflow: scroll;
+    .right_div {
+        overflow-y: auto;
+        .top {
+            height: 100px;
+            background: white;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: .3rem;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .title {
+            width: 100%;
+            text-align: center;
+            height: .70rem;
+            line-height: .70rem;
+            color: #2196f3;
+        }
+        .cbottom {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            a {
+                flex-shrink: 0;
+                width: 50%;
+                height: 3rem;
+                text-decoration: none;
+                text-align: center;
+                padding: 15px;
+                dl {
+                    width: 100%;
+                    height: 100%;
+                    color: #000;
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0;
+                    dd {
+                        height: 10%;
+                        margin: 0;
+                    }
+                    dt {
+                        width: 100%;
+                        height: 90%;
+                        margin: 0;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.active {
+    border-left: .06rem solid #108ee9;
+    color: #108ee9;
+}
