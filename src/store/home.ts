@@ -56,8 +56,8 @@ class HomeStore {
     @action
     async GoodsDetail(){
         this.goodsId = sessionStorage.getItem('goodsId')
-        console.log(this.goodsId)
         let res = await GoodsDetail(this.goodsId)
+        console.log(res.data)
         this.goodsDate = res.data
         this.info = res.data.info
     }

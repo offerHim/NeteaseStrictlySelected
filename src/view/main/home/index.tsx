@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import styles from './index.module.scss'
-import '../index.css'
 import useStore from '../../../util/useStore'
 import { useObserver } from 'mobx-react-lite'
 import { useHistory } from 'react-router-dom'
-import { Carousel} from 'antd-mobile';
+import { Carousel } from 'antd-mobile';
 
 
 
@@ -37,33 +36,19 @@ const Home: React.FC = () => {
 
     return useObserver(() => (<div className={styles.home_div}>
         <div className={styles.banner}>
-            
-                <Carousel
-                    style={{ height: '3.99rem' }}
-                    autoplay={true}
-                    dots
-                    autoplayInterval={1500}
-                    infinite
-                >
-                    {
-                        home.data.banner.map(val => (
-                            // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                            <a
-                                key={val.id}
-                                href="#"
-                                style={{ display: 'inline-block', width: '100%', height: '3.99rem' }}
-                            >
-                                <img
-                                    src={val.image_url}
-                                    alt=""
-                                    style={{ width: '100%', verticalAlign: 'top', height: '3.99rem', zIndex: 99 }}
-                                />
-                            </a>
-                        )
-                        )
-                    }
-                </Carousel>
-            
+            <Carousel
+                style={{ height: '3.99rem' }}
+                autoplay={true}
+                dots
+                autoplayInterval={1500}
+                infinite
+            >
+                {
+                    home.data.banner.map((item,index) => {
+                        return <img key={index} src={item.image_url} alt=""  style={{ width: '100%', verticalAlign: 'top', height: '3.99rem'}} />
+                    })
+                }
+            </Carousel>
         </div>
         <div className={styles.nav_title}>
             {
@@ -146,7 +131,7 @@ const Home: React.FC = () => {
                         <div className={styles.cateGoryGoodsWrap}>
                             {
                                 item.goodsList.map((val: any, key: number) => {
-                                    return <div key={key} className={styles.block}>
+                                    return <div key={key} className={styles.block} onClick={() => toGoodsDetail(val.id)}>
                                         <img src={val.list_pic_url} alt="" />
                                         <p className={styles.name}>{val.name}</p>
                                         <p className={styles.price}>￥{val.retail_price}</p>

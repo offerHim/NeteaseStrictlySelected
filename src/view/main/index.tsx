@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import RouterView from '../../router/RouterView'
 import styles from './index.module.scss'
 
 const Main: React.FC = (props:any) => {
-  
     
     let navList=[
         {
