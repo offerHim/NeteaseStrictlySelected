@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // 创建axios实例
 const instance = axios.create({
-    baseURL: '//169.254.156.252:8888',
+    baseURL: '//169.254.44.58:8888',
     timeout: 3000,
     // headers: {'X-Custom-Header': 'foobar'}
 });
