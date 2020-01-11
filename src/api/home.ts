@@ -22,15 +22,16 @@ export function GoodsDetail(id:string){
     return request({
         url: '/goods/detail',
         method: 'get',
-        params:{id}
+        params:{id,page:"1",size:"10"}
     })
 }
 
-//制造商详情界面商品
-// export function goodsRelated(id:string){
-//     return request({
-//         url: '/goods/related',
-//         method: 'get',
-//         params:{id}
-//     })
-// }
+// 制造商详情界面商品
+export function goodsRelated(brandId:string){
+    console.log("16666",brandId)
+    return request({
+        url: '/goods/list',
+        method: 'get',
+        params:{brandId}
+    })
+}

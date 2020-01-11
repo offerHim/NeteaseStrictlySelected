@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx'
 
-import { home , BrandDetail , GoodsDetail} from "../api/home"
+import { home , BrandDetail , GoodsDetail ,goodsRelated} from "../api/home"
 import { HomeType , GooodsType } from '../util/type'
 
 class HomeStore {
@@ -49,6 +49,7 @@ class HomeStore {
     async BrandDetail(){
         this.brandId = sessionStorage.getItem('brandId')
         let res = await BrandDetail(this.brandId)
+        console.log(res)
         this.brandDetails = res.data.brand
     }
 
@@ -61,13 +62,13 @@ class HomeStore {
         this.goodsDate = res.data
         this.info = res.data.info
     }
-    // @action
-    // async goodsRelated(){
-    //     this.id = sessionStorage.getItem('id')
-    //     console.log(this.id )
-    //     let res = await goodsRelated(this.brandId)
-    //     console.log(res)
-    // }
+    //制造商详情商品
+    @action
+    async goodsRelated(){
+        this.brandId = sessionStorage.getItem('brandId')
+        let res = await goodsRelated(this.brandId)
+        console.log(res)
+    }
 }
 
 export default HomeStore

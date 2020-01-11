@@ -12,7 +12,7 @@ const Cart: React.FC = () => {
     let history = useHistory()
     useEffect(()=>{ 
         home.BrandDetail()
-        // home.goodsRelated()
+        home.goodsRelated()
     },[])
     
     return useObserver(()=>(
